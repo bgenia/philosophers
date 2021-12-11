@@ -1,0 +1,14 @@
+.vscode/
+
+build/
+
+*.a
+*.out
+
+*.dSYM/
+
+philo
+philo_bonus
+
+!philo/
+!philo_bonus/
