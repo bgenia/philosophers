@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_merge.c                                    :+:      :+:    :+:   */
+/*   config_parse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:58 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 15:13:10 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 16:06:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
+#include <philosophers/mandatory/philo.h>
 
-void	ft_list_merge(t_list **list1, t_list *list2)
+int
+	config_parse(t_config *config, int argc, char **argv)
 {
-	t_list	*current_element;
-
-	current_element = *list1;
-	while (current_element && current_element->next)
-		current_element = current_element->next;
-	if (!current_element)
-		*list1 = list2;
-	else
-		current_element->next = list2;
+	if (argc < 5 || argc > 6)
+		return (-1);
+	config->philo_count = ft_atoi(argv[1]);
+	config->time_to_die = ft_atoi(argv[2]);
+	config->time_to_eat = ft_atoi(argv[3]);
+	config->time_to_sleep = ft_atoi(argv[4]);
+	config->meal_count_goal = -1;
+	if (argc == 6)
+		config->meal_count_goal = ft_atoi(argv[5]);
+	return (0);
 }

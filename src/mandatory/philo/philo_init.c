@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_add_front.c                                :+:      :+:    :+:   */
+/*   philo_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:33 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 15:11:12 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 17:30:17 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosophers/lib/lib.h>
+#include <pthread.h>
 
-void	ft_list_add_front(t_list **list, t_list *element)
+#include <philosophers/mandatory/philo.h>
+
+int
+	philo_init(t_philo *philo, t_simulation *simulation, int index)
 {
-	element->next = *list;
-	*list = element;
+	philo->simulation = simulation;
+	philo->index = index;
+	philo->is_alive = true;
+	if (pthread_mutex_init(&philo->death_mutex, NULL))
+		return (-1);
+	if (pthread_mutex_init(&philo->meal_goal_mutex, NULL))
+		return (-1);
+	pthread_mutex_lock(&philo->meal_goal_mutex);
+	return (0);
 }

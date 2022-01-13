@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_from.c                                     :+:      :+:    :+:   */
+/*   simulation_await.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:48 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 16:05:16 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 16:06:23 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosophers/lib/lib.h>
+#include <pthread.h>
 
-t_list	*ft_list_from(int count, void **values, void (*_free)(void *))
+#include <philosophers/mandatory/philo.h>
+
+void
+	simulation_await(t_simulation *simulation)
 {
-	int		i;
-	t_list	*list;
-	t_list	*current_element;
-
-	i = 0;
-	list = NULL;
-	while (i < count)
-	{
-		current_element = ft_list_create(values[i]);
-		if (!current_element)
-		{
-			ft_list_clear(&list, _free);
-			return (list);
-		}
-		ft_list_add_back(&list, current_element);
-		i++;
-	}
-	return (list);
+	pthread_mutex_lock(&simulation->end_mutex);
+	pthread_mutex_unlock(&simulation->end_mutex);
 }

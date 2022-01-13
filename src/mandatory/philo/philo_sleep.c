@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_sorted_merge.c                             :+:      :+:    :+:   */
+/*   philo_sleep.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:01:12 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 14:51:55 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 16:03:33 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
+#include <philosophers/mandatory/philo.h>
 
-void	ft_list_sorted_merge(
-	t_list **list1,
-	t_list *list2,
-	int (*comparator)()
-)
+void
+	philo_sleep(t_philo *philo)
 {
-	t_list	*current_element;
-	t_list	*temp_element;
-
-	current_element = list2;
-	while (current_element)
-	{
-		temp_element = current_element->next;
-		ft_list_sorted_insert(list1, current_element, comparator);
-		current_element = temp_element;
-	}
+	philo_log(philo, "is sleeping");
+	ft_usleep(philo->simulation->config->time_to_sleep * 1000);
 }

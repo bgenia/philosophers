@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_add_back.c                                 :+:      :+:    :+:   */
+/*   ft_get_time.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:31 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/11 17:25:17 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/11 17:26:15 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosophers/lib/lib.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include <sys/time.h>
 
-void	ft_list_add_back(t_list **list, t_list *element)
+uint64_t	ft_get_time(void)
 {
-	t_list	*last;
+	uint64_t			time;
+	struct timeval		current_time;
 
-	last = ft_list_last(*list);
-	if (!last)
-		*list = element;
-	else
-		last->next = element;
+	gettimeofday(&current_time, NULL);
+	time = (current_time.tv_sec * 1000 * 1000) + (current_time.tv_usec);
+	return (time);
 }

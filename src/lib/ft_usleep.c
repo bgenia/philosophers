@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_reverse_values.c                           :+:      :+:    :+:   */
+/*   ft_usleep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:01:02 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/11 14:18:14 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/11 17:29:11 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <sys/time.h>
+#include <inttypes.h>
+
 #include <philosophers/lib/lib.h>
 
-void	ft_list_reverse_values(t_list *list)
+void	ft_usleep(uint64_t us)
 {
-	size_t	size;
-	size_t	i;
-	size_t	j;
+	uint64_t	start_time;
 
-	size = ft_list_size(list);
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			ft_list_swap_values(list, i, j);
-			j++;
-		}
-		i++;
-	}
+	start_time = ft_get_time();
+	while ((ft_get_time() - start_time) < us)
+		usleep(us / 10);
+}
+
+void	ft_uhalt(uint64_t us)
+{
+	uint64_t	start_time;
+
+	start_time = ft_get_time();
+	while ((ft_get_time() - start_time) < us)
+		;
 }

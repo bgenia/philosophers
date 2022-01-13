@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_at.c                                       :+:      :+:    :+:   */
+/*   simulation_destroy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:35 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 15:11:37 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 15:29:13 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosophers/lib/lib.h>
+#include <stdlib.h>
 
-t_list	*ft_list_at(t_list *list, unsigned int index)
+#include <pthread.h>
+
+#include <philosophers/mandatory/philo.h>
+
+void	simulation_destroy(t_simulation *app)
 {
-	unsigned int	i;
-	t_list			*current_element;
+	int	i;
 
-	i = 0;
-	current_element = list;
-	while (current_element && i < index)
+	free(app->philos);
+	if (app->fork_mutexes)
 	{
-		i++;
-		current_element = current_element->next;
+		i = 0;
+		while (i < app->config->philo_count)
+			pthread_mutex_destroy(&app->fork_mutexes[i++]);
 	}
-	if (i != index)
-		return (NULL);
-	return (current_element);
+	free(app->fork_mutexes);
+	pthread_mutex_destroy(&app->print_mutex);
 }

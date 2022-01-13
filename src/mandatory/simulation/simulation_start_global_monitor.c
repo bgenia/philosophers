@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   simulation_start_global_monitor.c                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:00:53 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 17:21:17 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 17:33:13 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <philosophers/lib/lib.h>
+#include <stdlib.h>
 
-t_list	*ft_list_last(t_list *list)
+#include <pthread.h>
+
+#include <philosophers/mandatory/philo.h>
+
+void
+	*simulation_start_global_monitor(t_simulation *simulation)
 {
-	t_list	*last;
+	int	i;
 
-	last = list;
-	while (last && last->next)
-		last = last->next;
-	return (last);
+	i = 0;
+	while (i < simulation->config->philo_count)
+	{
+		pthread_mutex_lock(&simulation->philos[i].meal_goal_mutex);
+		i++;
+	}
+	pthread_mutex_unlock(&simulation->end_mutex);
+	return (NULL);
 }

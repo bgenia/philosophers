@@ -4,8 +4,8 @@ include maketools/source_list.mk
 NAME := philo
 
 SRC_LIB := $(call source_list,src/lib)
-SRC_MAIN := $(call source_list,src/philo)
-SRC_BONUS := $(call source_list,src/philo_bonus)
+SRC_MAIN := $(call source_list,src/mandatory)
+SRC_BONUS := $(call source_list,src/bonus)
 
 SRC := $(if $(BONUS_MODE),$(SRC_BONUS),$(SRC_MAIN)) $(SRC_LIB)
 

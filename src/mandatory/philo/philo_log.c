@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_sort.c                                     :+:      :+:    :+:   */
+/*   philo_log.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:01:08 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/11 17:29:34 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 16:12:56 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
+#include <pthread.h>
+
 #include <philosophers/lib/lib.h>
+#include <philosophers/mandatory/philo.h>
 
-void	ft_list_sort(t_list **list, int (*comparator)())
+void
+	philo_log(t_philo *philo, const char *message)
 {
-	size_t	i;
-	size_t	j;
-	void	*a;
-	void	*b;
-	size_t	size;
+	uint64_t	timestamp;
 
-	i = 0;
-	size = ft_list_size(*list);
-	while (i < size - 1)
-	{
-		j = 0;
-		while (j < size - i - 1)
-		{
-			a = ft_list_at(*list, j)->value;
-			b = ft_list_at(*list, j + 1)->value;
-			if (comparator(a, b) > 0)
-				ft_list_swap_elements(list, j, j + 1);
-			j++;
-		}
-		i++;
-	}
+	timestamp = ft_get_time() - philo->simulation->simulation_start_time;
+	pthread_mutex_lock(&philo->simulation->print_mutex);
+	printf("%lu p%d %s\n", timestamp / 1000, philo->index + 1, message);
+	pthread_mutex_unlock(&philo->simulation->print_mutex);
 }
