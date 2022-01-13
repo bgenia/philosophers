@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simulation_start_global_monitor.c                  :+:      :+:    :+:   */
+/*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 17:21:17 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Created: 2022/01/13 17:53:09 by bgenia            #+#    #+#             */
+/*   Updated: 2022/01/13 18:04:18 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef CONFIG_H
+# define CONFIG_H
 
-#include <pthread.h>
-
-#include <philosophers/mandatory/simulation.h>
-
-void
-	*simulation_start_global_monitor(t_simulation *simulation)
+typedef struct s_config
 {
-	int	i;
+	int				philo_count;
+	uint64_t		time_to_eat;
+	uint64_t		time_to_sleep;
+	uint64_t		time_to_die;
+	int				meal_count_goal;
+}	t_config;
 
-	i = 0;
-	while (i < simulation->config->philo_count)
-	{
-		pthread_mutex_lock(&simulation->philos[i].meal_goal_mutex);
-		i++;
-	}
-	pthread_mutex_unlock(&simulation->end_mutex);
-	return (NULL);
-}
+int
+config_parse(t_config *config, int argc, char **argv);
+
+#endif

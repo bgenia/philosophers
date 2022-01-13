@@ -36,6 +36,9 @@ SRC@src/lib := \
 	src/lib/ft_memmove.c \
 	src/lib/ft_strjoin.c \
 
+SRC@src/common := \
+	src/common/config/config_parse.c \
+
 SRC@src/mandatory := \
 	src/mandatory/philo/philo_start_ruotine.c \
 	src/mandatory/philo/philo_start_monitor.c \
@@ -49,7 +52,6 @@ SRC@src/mandatory := \
 	src/mandatory/simulation/simulation_init.c \
 	src/mandatory/simulation/simulation_start_global_monitor.c \
 	src/mandatory/simulation/simulation_start.c \
-	src/mandatory/config/config_parse.c \
 	src/mandatory/main.c \
 
 SRC@src/bonus := \

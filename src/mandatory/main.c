@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:25:05 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 16:26:31 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <pthread.h>
 
 #include <philosophers/lib/lib.h>
-#include <philosophers/mandatory/philo.h>
+#include <philosophers/mandatory/simulation.h>
 
 int
 	main(int argc, char **argv)

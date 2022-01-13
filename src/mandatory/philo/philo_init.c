@@ -6,13 +6,13 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:11:12 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 17:30:17 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
 
-#include <philosophers/mandatory/philo.h>
+#include <philosophers/mandatory/simulation.h>
 
 int
 	philo_init(t_philo *philo, t_simulation *simulation, int index)

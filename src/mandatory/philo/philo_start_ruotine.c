@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:47:09 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 16:09:13 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <pthread.h>
 
 #include <philosophers/lib/lib.h>
-#include <philosophers/mandatory/philo.h>
+#include <philosophers/mandatory/simulation.h>
 
 void
 	*philo_start_routine(t_philo *philo)

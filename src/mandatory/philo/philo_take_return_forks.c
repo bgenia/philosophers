@@ -6,13 +6,13 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:35:03 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 15:26:44 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
 
-#include <philosophers/mandatory/philo.h>
+#include <philosophers/mandatory/simulation.h>
 
 static inline pthread_mutex_t
 	*_get_left_fork(t_philo *philo)
