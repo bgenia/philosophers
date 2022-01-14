@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:03:05 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 14:26:23 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:04:11 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static int
 	_create_mutexes(t_simulation *simulation)
 {
 	if (pthread_mutex_init(&simulation->print_mutex, NULL))
+		return (-1);
+	if (pthread_mutex_init(&simulation->state_mutex, NULL))
 		return (-1);
 	return (0);
 }

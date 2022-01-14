@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:11:37 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 14:26:47 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:04:27 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void
 		free(simulation->fork_mutexes);
 	}
 	pthread_mutex_destroy(&simulation->print_mutex);
+	pthread_mutex_destroy(&simulation->state_mutex);
 }

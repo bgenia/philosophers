@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:53:54 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 13:55:28 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:05:48 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ struct s_simulation
 	t_philo			*philos;
 	pthread_mutex_t	*fork_mutexes;
 	pthread_mutex_t	print_mutex;
+	pthread_mutex_t	state_mutex;
 	bool			is_running;
 };
 
@@ -44,6 +45,8 @@ void
 
 int
 simulation_start(t_simulation *simulation);
+void
+simulation_stop(t_simulation *simulation);
 
 int
 simulation_await(t_simulation *simulation);
