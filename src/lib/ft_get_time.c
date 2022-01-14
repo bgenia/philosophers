@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:25:17 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/11 17:26:15 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <inttypes.h>
 #include <sys/time.h>
 
-uint64_t	ft_get_time(void)
+uint64_t
+	ft_get_time(void)
 {
 	uint64_t			time;
 	struct timeval		current_time;

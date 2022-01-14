@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:01:36 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static void	print_positive_number(long n, int fd)
 	}
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void
+	ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 	{

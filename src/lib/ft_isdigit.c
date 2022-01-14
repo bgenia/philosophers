@@ -6,11 +6,12 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:00:24 by bgenia            #+#    #+#             */
-/*   Updated: 2021/09/07 17:00:31 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int
+	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

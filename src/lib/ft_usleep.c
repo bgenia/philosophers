@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:18:14 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/11 17:29:11 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:19:01 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 #include <philosophers/lib/lib.h>
 
-void	ft_usleep(uint64_t us)
+void
+	ft_usleep(uint64_t us)
 {
 	uint64_t	start_time;
 
@@ -25,7 +26,8 @@ void	ft_usleep(uint64_t us)
 		usleep(us / 10);
 }
 
-void	ft_uhalt(uint64_t us)
+void
+	ft_uhalt(uint64_t us)
 {
 	uint64_t	start_time;
 

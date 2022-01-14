@@ -6,13 +6,14 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:02:25 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:18:22 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
 
-char	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
+char
+	*ft_strmapi(char const *str, char (*f)(unsigned int, char))
 {
 	size_t	str_length;
 	char	*result;

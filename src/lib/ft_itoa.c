@@ -6,13 +6,14 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:00:29 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:17:20 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
 
-static int	get_digit_count(long n)
+static int
+	get_digit_count(long n)
 {
 	int	digits;
 
@@ -25,7 +26,8 @@ static int	get_digit_count(long n)
 	return (digits);
 }
 
-static int	get_number_length(int n)
+static int
+	get_number_length(int n)
 {
 	if (n == 0)
 		return (1);
@@ -34,7 +36,8 @@ static int	get_number_length(int n)
 	return (get_digit_count(n));
 }
 
-static void	stringify_positive(char *s, long n, int length)
+static void
+	stringify_positive(char *s, long n, int length)
 {
 	if (n >= 10)
 	{
@@ -47,7 +50,8 @@ static void	stringify_positive(char *s, long n, int length)
 	}
 }
 
-char	*ft_itoa(int n)
+char
+	*ft_itoa(int n)
 {
 	char	*result;
 	int		length;

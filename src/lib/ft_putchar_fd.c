@@ -6,13 +6,14 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:01:31 by bgenia            #+#    #+#             */
-/*   Updated: 2021/09/07 17:02:08 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void
+	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

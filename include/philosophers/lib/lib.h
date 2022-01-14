@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:02:44 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/11 17:29:13 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:19:24 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,7 @@ char
 char
 *ft_strrchr(const char *s, int c);
 char
-*ft_strnstr(
-	const char *haystack,
-	const char *needle,
-	size_t len
-	);
+*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 int
 ft_strncmp(const char *s1, const char *s2, size_t n);

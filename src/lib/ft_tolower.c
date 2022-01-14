@@ -6,11 +6,12 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:02:32 by bgenia            #+#    #+#             */
-/*   Updated: 2021/09/07 17:02:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:43 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int
+	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + ('a' - 'A'));

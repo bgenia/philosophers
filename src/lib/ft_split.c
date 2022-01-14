@@ -6,13 +6,14 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:01:41 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:17:55 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
 
-static char	*find_next_separator(char *str, char separator)
+static char
+	*find_next_separator(char *str, char separator)
 {
 	char	*next_separator;
 
@@ -22,7 +23,8 @@ static char	*find_next_separator(char *str, char separator)
 	return (next_separator);
 }
 
-static char	*find_next_word(char *str, char separator)
+static char
+	*find_next_word(char *str, char separator)
 {
 	while (*str)
 	{
@@ -33,7 +35,8 @@ static char	*find_next_word(char *str, char separator)
 	return (NULL);
 }
 
-static size_t	get_word_count(char *str, char separator)
+static size_t
+	get_word_count(char *str, char separator)
 {
 	size_t	word_count;
 	size_t	word_length;
@@ -51,7 +54,8 @@ static size_t	get_word_count(char *str, char separator)
 	return (word_count);
 }
 
-static void	*free_result(char **result, size_t word_count)
+static void
+	*free_result(char **result, size_t word_count)
 {
 	size_t	j;
 
@@ -62,7 +66,8 @@ static void	*free_result(char **result, size_t word_count)
 	return (NULL);
 }
 
-char	**ft_split(char const *str, char separator)
+char
+	**ft_split(char const *str, char separator)
 {
 	char	**result;
 	char	*word;

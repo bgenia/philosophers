@@ -6,20 +6,22 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:02:12 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:18:10 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
 
-static size_t	protected_strlen(char *str)
+static size_t
+	protected_strlen(char *str)
 {
 	if (str)
 		return (ft_strlen(str));
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char
+	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_length;
 	size_t	s2_length;

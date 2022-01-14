@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:02:34 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:18:54 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 #include <philosophers/lib/lib.h>
 
-static size_t	size_min(size_t a, size_t b)
+static size_t
+	size_min(size_t a, size_t b)
 {
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-static size_t	ft_strnlen(const char *str, size_t max_length)
+static size_t
+	ft_strnlen(const char *str, size_t max_length)
 {
 	return (size_min(max_length, ft_strlen(str)));
 }
 
-char	*ft_substr(char const *str, unsigned int start, size_t length)
+char
+	*ft_substr(char const *str, unsigned int start, size_t length)
 {
 	size_t	substring_length;
 	char	*substring;

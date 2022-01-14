@@ -6,20 +6,22 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:00:10 by bgenia            #+#    #+#             */
-/*   Updated: 2021/12/11 19:40:14 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:16:53 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <philosophers/lib/lib.h>
 
-static int	ft_isspace(char c)
+static int
+	ft_isspace(char c)
 {
 	return (c == ' ' || c == '\t'
 		|| c == '\v' || c == '\n'
 		|| c == '\r' || c == '\f');
 }
 
-static long	add_digit(long value, int digit, int sign, int *overflow)
+static long
+	add_digit(long value, int digit, int sign, int *overflow)
 {
 	long	result;
 
@@ -37,7 +39,8 @@ static long	add_digit(long value, int digit, int sign, int *overflow)
 	return (result);
 }
 
-int	ft_atoi(const char *str)
+int
+	ft_atoi(const char *str)
 {
 	size_t	i;
 	int		sign;
