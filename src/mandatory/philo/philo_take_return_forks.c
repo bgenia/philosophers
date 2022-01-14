@@ -6,12 +6,13 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:35:03 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:56:27 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 17:00:26 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <pthread.h>
 
+#include <philosophers/lib/termdefs.h>
 #include <philosophers/mandatory/simulation.h>
 
 static inline pthread_mutex_t
@@ -33,9 +34,9 @@ void
 	philo_take_forks(t_philo *philo)
 {
 	pthread_mutex_lock(_get_left_fork(philo));
-	philo_log(philo, "has taken a fork");
+	philo_log(philo, TERM_F_YELLOW "has taken a fork" TERM_RESET);
 	pthread_mutex_lock(_get_right_fork(philo));
-	philo_log(philo, "has taken a fork");
+	philo_log(philo, TERM_F_YELLOW "has taken a fork" TERM_RESET);
 }
 
 void

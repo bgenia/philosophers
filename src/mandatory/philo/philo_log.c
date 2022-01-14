@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 17:29:34 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 16:44:10 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 17:05:27 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <pthread.h>
 
 #include <philosophers/lib/lib.h>
+#include <philosophers/lib/termdefs.h>
 #include <philosophers/mandatory/simulation.h>
 
 void
@@ -25,6 +26,12 @@ void
 	timestamp = ft_get_time() - philo->simulation->simulation_start_time;
 	pthread_mutex_lock(&philo->simulation->print_mutex);
 	if (philo->simulation->is_running)
-		printf("%lu p%d %s\n", timestamp / 1000, philo->index + 1, message);
+		printf(
+			TERM_F_GRAY "%lums\t\t"
+			TERM_F_DEFAULT "p%d\t%s\n",
+			timestamp / 1000,
+			philo->index + 1,
+			message
+			);
 	pthread_mutex_unlock(&philo->simulation->print_mutex);
 }

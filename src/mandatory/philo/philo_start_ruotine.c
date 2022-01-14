@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:47:09 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 14:14:17 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:59:49 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <pthread.h>
 
 #include <philosophers/lib/lib.h>
+#include <philosophers/lib/termdefs.h>
 #include <philosophers/mandatory/simulation.h>
 
 void
@@ -33,7 +34,7 @@ void
 		philo_eat(philo);
 		philo_return_forks(philo);
 		philo_sleep(philo);
-		philo_log(philo, "is thinking");
+		philo_log(philo, TERM_F_MAGENTA "is thinking" TERM_RESET);
 	}
 	return (PHILO_OK);
 }

@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:55:50 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 16:49:25 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 17:01:57 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <pthread.h>
 
 #include <philosophers/lib/lib.h>
+#include <philosophers/lib/termdefs.h>
 #include <philosophers/mandatory/simulation.h>
 
 void
@@ -27,7 +28,7 @@ void
 		if (ft_get_time() > philo->last_meal_time
 			+ philo->simulation->config->time_to_die * 1000)
 		{
-			philo_log(philo, "died");
+			philo_log(philo, TERM_F_RED "died" TERM_RESET);
 			break ;
 		}
 		pthread_mutex_unlock(&philo->death_mutex);
