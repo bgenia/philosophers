@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:55:50 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 13:54:23 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:49:25 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void
 		ft_usleep(1000);
 	}
 	pthread_mutex_unlock(&philo->death_mutex);
+	simulation_stop(philo->simulation);
+	philo_return_forks(philo);
 	return (NULL);
 }

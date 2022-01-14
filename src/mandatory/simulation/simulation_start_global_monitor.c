@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:21:17 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 13:53:58 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:08:00 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ void
 		pthread_mutex_lock(&simulation->philos[i].meal_goal_mutex);
 		i++;
 	}
-	simulation->is_running = false;
+	simulation_stop(simulation);
 	return (NULL);
 }
