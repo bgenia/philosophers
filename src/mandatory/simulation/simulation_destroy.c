@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:11:37 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 13:54:19 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:26:47 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 #include <philosophers/mandatory/simulation.h>
 
-void	simulation_destroy(t_simulation *simulation)
+void
+	simulation_destroy(t_simulation *simulation)
 {
 	int	i;
 
