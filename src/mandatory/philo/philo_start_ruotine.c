@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:47:09 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 14:14:17 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void
 			&monitor_thread, NULL, (void *) &philo_start_monitor, philo))
 		return (PHILO_ERROR);
 	pthread_detach(monitor_thread);
-	while (true)
+	while (philo->simulation->is_running)
 	{
 		philo_take_forks(philo);
 		philo_eat(philo);

@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:55:50 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 13:54:23 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void
 	*philo_start_monitor(t_philo *philo)
 {
-	while (true)
+	while (philo->simulation->is_running)
 	{
 		pthread_mutex_lock(&philo->death_mutex);
 		if (ft_get_time() > philo->last_meal_time
@@ -34,6 +34,5 @@ void
 		ft_usleep(1000);
 	}
 	pthread_mutex_unlock(&philo->death_mutex);
-	pthread_mutex_unlock(&philo->simulation->end_mutex);
 	return (NULL);
 }

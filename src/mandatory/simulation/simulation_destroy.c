@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:11:37 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 13:54:19 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,23 @@
 
 #include <philosophers/mandatory/simulation.h>
 
-void	simulation_destroy(t_simulation *app)
+void	simulation_destroy(t_simulation *simulation)
 {
 	int	i;
 
-	free(app->philos);
-	if (app->fork_mutexes)
+	if (simulation->philos)
 	{
 		i = 0;
-		while (i < app->config->philo_count)
-			pthread_mutex_destroy(&app->fork_mutexes[i++]);
+		while (i < simulation->config->philo_count)
+			philo_destroy(&simulation->philos[i++]);
+		free(simulation->philos);
 	}
-	free(app->fork_mutexes);
-	pthread_mutex_destroy(&app->print_mutex);
+	if (simulation->fork_mutexes)
+	{
+		i = 0;
+		while (i < simulation->config->philo_count)
+			pthread_mutex_destroy(&simulation->fork_mutexes[i++]);
+		free(simulation->fork_mutexes);
+	}
+	pthread_mutex_destroy(&simulation->print_mutex);
 }

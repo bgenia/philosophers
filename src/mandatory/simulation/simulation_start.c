@@ -6,9 +6,11 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:32:44 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 13:48:32 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdbool.h>
 
 #include <pthread.h>
 
@@ -31,13 +33,14 @@ int
 		pthread_detach(thread);
 	}
 	i = 0;
+	simulation->is_running = true;
 	while (i < simulation->config->philo_count)
 	{
 		philo = &simulation->philos[i];
 		philo->last_meal_time = simulation->simulation_start_time;
 		if (pthread_create(&thread, NULL, (void *)philo_start_routine, philo))
 			return (-1);
-		pthread_detach(thread);
+		philo->thread = thread;
 		ft_usleep(100);
 		i++;
 	}

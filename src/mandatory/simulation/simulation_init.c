@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 15:03:05 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/13 18:04:40 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/14 13:54:05 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ static int
 {
 	if (pthread_mutex_init(&simulation->print_mutex, NULL))
 		return (-1);
-	if (pthread_mutex_init(&simulation->end_mutex, NULL))
-		return (-1);
-	pthread_mutex_lock(&simulation->end_mutex);
 	return (0);
 }
 
@@ -54,7 +51,8 @@ int	simulation_init(t_simulation *simulation, t_config *config)
 		while (i < simulation->config->philo_count)
 		{
 			simulation->philos[i] = (t_philo){0};
-			if (philo_init(&simulation->philos[i], simulation, i))
+			if (philo_init(&simulation->philos[i], simulation, i)
+				|| pthread_mutex_init(&simulation->fork_mutexes[i], NULL))
 			{
 				i = -1;
 				break ;

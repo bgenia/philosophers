@@ -38,12 +38,14 @@ SRC@src/lib := \
 
 SRC@src/common := \
 	src/common/config/config_parse.c \
+	src/common/util/exit_error.c \
 
 SRC@src/mandatory := \
 	src/mandatory/philo/philo_start_ruotine.c \
 	src/mandatory/philo/philo_start_monitor.c \
 	src/mandatory/philo/philo_take_return_forks.c \
 	src/mandatory/philo/philo_eat.c \
+	src/mandatory/philo/philo_destroy.c \
 	src/mandatory/philo/philo_init.c \
 	src/mandatory/philo/philo_sleep.c \
 	src/mandatory/philo/philo_log.c \
