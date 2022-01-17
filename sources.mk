@@ -38,7 +38,7 @@ SRC@src/lib := \
 
 SRC@src/common := \
 	src/common/config/config_parse.c \
-	src/common/util/exit_error.c \
+	src/common/utils/exit_error.c \
 
 SRC@src/mandatory := \
 	src/mandatory/philo/philo_start_ruotine.c \
@@ -58,4 +58,22 @@ SRC@src/mandatory := \
 	src/mandatory/main.c \
 
 SRC@src/bonus := \
+	src/bonus/philo/philo_start_ruotine.c \
+	src/bonus/philo/philo_start_monitor.c \
+	src/bonus/philo/philo_take_return_forks.c \
+	src/bonus/philo/philo_eat.c \
+	src/bonus/philo/philo_destroy.c \
+	src/bonus/philo/philo_init.c \
+	src/bonus/philo/philo_sleep.c \
+	src/bonus/philo/philo_log.c \
+	src/bonus/simulation/simulation_await.c \
+	src/bonus/simulation/simulation_destroy.c \
+	src/bonus/simulation/simulation_init.c \
+	src/bonus/simulation/simulation_stop.c \
+	src/bonus/simulation/simulation_start_global_monitor.c \
+	src/bonus/simulation/simulation_start.c \
+	src/bonus/process/process_join.c \
+	src/bonus/process/process_create.c \
+	src/bonus/semutils/sem_open_new.c \
+	src/bonus/semutils/sem_open_unique.c \
 	src/bonus/main.c \
