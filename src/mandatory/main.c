@@ -6,16 +6,11 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 14:25:05 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/14 14:13:34 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/16 18:30:40 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdbool.h>
-
-#include <unistd.h>
-
-#include <pthread.h>
 
 #include <philosophers/lib/lib.h>
 #include <philosophers/common/config.h>
