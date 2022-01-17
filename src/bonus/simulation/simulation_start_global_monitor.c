@@ -6,13 +6,12 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:21:17 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/16 20:04:50 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/18 01:02:12 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdbool.h>
-#include <stdio.h>
 
 #include <semaphore.h>
 
@@ -31,7 +30,6 @@ void
 		philo_log(&simulation->philos[i], "finished");
 		i++;
 	}
-	// simulation_stop(simulation);
 	sem_post(simulation->end_mutex);
 	return (NULL);
 }

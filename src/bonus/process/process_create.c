@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 13:02:44 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/18 00:54:44 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/18 01:11:06 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#include <stdio.h>
 #include <philosophers/bonus/simulation.h>
 
 int
@@ -22,11 +21,7 @@ int
 {
 	*pid = fork();
 	if (*pid == 0)
-	{
-		int s = routine(arg);
-		printf(">> Philo %d exiting: %d\n", ((t_philo *)arg)->index + 1, s);
-		exit(s);
-	}
+		exit(routine(arg));
 	if (*pid == -1)
 		return (-1);
 	return (0);
