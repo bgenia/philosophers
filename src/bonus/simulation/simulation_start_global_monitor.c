@@ -6,7 +6,7 @@
 /*   By: bgenia <bgenia@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:21:17 by bgenia            #+#    #+#             */
-/*   Updated: 2022/01/18 01:02:12 by bgenia           ###   ########.fr       */
+/*   Updated: 2022/01/18 15:23:27 by bgenia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void
 	i = 0;
 	while (i < simulation->config->philo_count)
 	{
-		philo_log(&simulation->philos[i], "in progress");
 		sem_wait(simulation->meal_goal_semaphore);
-		philo_log(&simulation->philos[i], "finished");
 		i++;
 	}
 	sem_post(simulation->end_mutex);
